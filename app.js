@@ -21,7 +21,7 @@ app.use('/', register);
 
 app.post('/user/register', (req, res, next) => {
   filePath = __dirname + '/formdata.csv';
-  const newFormData = `${req.body.email}, ${req.body.password}\r\n`;
+  const newFormData = `${req.body.name}, ${req.body.surname}, ${req.body.email}\r\n`;
   fs.appendFile(filePath, newFormData, function () {
     res.send('ok');
   });
